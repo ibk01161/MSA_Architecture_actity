@@ -1,0 +1,13 @@
+server:
+  port: 7777
+
+spring:
+  application:
+    name: EurekaClient        # 서비스 이름
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    server-url:
+      defaultZone: http://localhost:8761/eureka  #default address
